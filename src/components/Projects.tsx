@@ -49,7 +49,6 @@ const PROJECTS = [
 ];
 
 function MockupDashboard({ accent }: { accent: "cyan" | "violet" }) {
-  const c = accent === "cyan" ? "cyan" : "violet";
   return (
     <div className="w-full h-full bg-surface rounded-lg p-3 flex flex-col gap-2 overflow-hidden">
       {/* Title bar */}
@@ -64,7 +63,7 @@ function MockupDashboard({ accent }: { accent: "cyan" | "violet" }) {
         {[...Array(4)].map((_, i) => (
           <div key={i} className="rounded-md bg-white/[0.03] p-2 border border-white/5">
             <div className="h-1.5 w-8 rounded bg-white/10 mb-1.5" />
-            <div className={`h-3 w-12 rounded bg-${c}/20`} />
+            <div className={`h-3 w-12 rounded ${accent === "cyan" ? "bg-cyan/20" : "bg-violet/20"}`} />
           </div>
         ))}
       </div>
@@ -88,26 +87,26 @@ function MockupDashboard({ accent }: { accent: "cyan" | "violet" }) {
       {/* Chat snippet */}
       <div className="rounded-md bg-white/[0.03] border border-white/5 p-2 flex flex-col gap-1">
         <div className="h-1.5 w-20 rounded bg-white/10" />
-        <div className={`h-1.5 w-32 rounded bg-${c}/15`} />
+        <div className={`h-1.5 w-32 rounded ${accent === "cyan" ? "bg-cyan/15" : "bg-violet/15"}`} />
       </div>
     </div>
   );
 }
 
 function MockupMobile({ accent }: { accent: "cyan" | "violet" }) {
-  const c = accent === "cyan" ? "cyan" : "violet";
+  const isCyan = accent === "cyan";
   return (
     <div className="w-full h-full flex items-center justify-center gap-3">
       {/* Phone frame */}
       <div className="w-[45%] h-[85%] rounded-2xl border-2 border-white/10 bg-surface p-2 flex flex-col gap-1.5 overflow-hidden">
         <div className="w-12 h-1 rounded-full bg-white/10 mx-auto mb-1" />
-        <div className={`rounded-lg bg-${c}/10 p-2 flex-1 flex flex-col gap-1.5`}>
+        <div className={`rounded-lg p-2 flex-1 flex flex-col gap-1.5 ${isCyan ? "bg-cyan/10" : "bg-violet/10"}`}>
           <div className="h-2 w-16 rounded bg-white/10" />
           <div className="h-2 w-24 rounded bg-white/5" />
           <div className="flex-1 rounded-md bg-white/[0.04] mt-1 flex items-center justify-center">
-            <div className={`w-8 h-8 rounded-full bg-${c}/20 border border-${c}/30`} />
+            <div className={`w-8 h-8 rounded-full ${isCyan ? "bg-cyan/20 border border-cyan/30" : "bg-violet/20 border border-violet/30"}`} />
           </div>
-          <div className={`h-6 rounded-md bg-${c}/20 mt-auto`} />
+          <div className={`h-6 rounded-md mt-auto ${isCyan ? "bg-cyan/20" : "bg-violet/20"}`} />
         </div>
       </div>
       {/* Browser frame */}
@@ -121,10 +120,10 @@ function MockupMobile({ accent }: { accent: "cyan" | "violet" }) {
           <div className="rounded bg-white/[0.03] border border-white/5 p-1.5">
             <div className="h-1.5 w-12 rounded bg-white/10" />
           </div>
-          <div className={`rounded bg-${c}/[0.06] border border-${c}/10 row-span-2 p-1.5 flex flex-col gap-1`}>
+          <div className={`rounded row-span-2 p-1.5 flex flex-col gap-1 ${isCyan ? "bg-cyan/[0.06] border border-cyan/10" : "bg-violet/[0.06] border border-violet/10"}`}>
             <div className="h-1.5 w-16 rounded bg-white/10" />
             <div className="h-1.5 w-10 rounded bg-white/5" />
-            <div className={`h-4 rounded bg-${c}/10 mt-auto`} />
+            <div className={`h-4 rounded mt-auto ${isCyan ? "bg-cyan/10" : "bg-violet/10"}`} />
           </div>
         </div>
       </div>
@@ -133,7 +132,6 @@ function MockupMobile({ accent }: { accent: "cyan" | "violet" }) {
 }
 
 function MockupMonitor({ accent }: { accent: "cyan" | "violet" }) {
-  const c = accent === "cyan" ? "cyan" : "violet";
   return (
     <div className="w-full h-full bg-surface rounded-lg p-3 flex flex-col gap-2 overflow-hidden">
       <div className="flex items-center gap-1.5 mb-1">
@@ -193,7 +191,7 @@ function MockupMonitor({ accent }: { accent: "cyan" | "violet" }) {
               viewport={{ once: true }}
               transition={{ delay: 0.6 + i * 0.03 }}
               className={`flex-1 rounded-sm ${
-                h > 50 ? "bg-yellow-400/30" : `bg-${c}/25`
+                h > 50 ? "bg-yellow-400/30" : accent === "cyan" ? "bg-cyan/25" : "bg-violet/25"
               }`}
             />
           )
