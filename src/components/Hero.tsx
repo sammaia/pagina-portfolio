@@ -94,10 +94,10 @@ function AnimatedName({ text, className }: { text: string; className?: string })
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 top-8">
       {/* Radial gradient accent behind hero */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-cyan/[0.04] blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-violet/[0.05] blur-[100px] pointer-events-none" />
+      {/*<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-cyan/[0.02] blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-violet/[0.03] blur-[100px] pointer-events-none" />*/}
 
       <div className="max-w-4xl mx-auto text-center relative">
         {/* Status line */}

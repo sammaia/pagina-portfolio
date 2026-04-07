@@ -17,7 +17,7 @@ export default function Home() {
       <FloatingElements />
       <CustomCursor />
       <Navigation />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Projects />

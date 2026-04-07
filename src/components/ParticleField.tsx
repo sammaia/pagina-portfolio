@@ -115,10 +115,10 @@ function Particles() {
     <>
       <instancedMesh ref={meshRef} args={[undefined, undefined, PARTICLE_COUNT]}>
         <sphereGeometry args={[0.03, 8, 8]} />
-        <meshBasicMaterial color="#00e5ff" transparent opacity={0.9} />
+        <meshBasicMaterial color="#00e5ff" transparent opacity={0.35} />
       </instancedMesh>
       <lineSegments ref={linesRef} geometry={lineGeometry}>
-        <lineBasicMaterial vertexColors transparent opacity={0.3} />
+        <lineBasicMaterial vertexColors transparent opacity={0.30} />
       </lineSegments>
     </>
   );
@@ -126,7 +126,7 @@ function Particles() {
 
 export default function ParticleField() {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-0 z-0" style={{ opacity: 0.5 }}>
       <Canvas
         camera={{ position: [0, 0, 7], fov: 60 }}
         dpr={[1, 2]}
@@ -140,7 +140,7 @@ export default function ParticleField() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(5,5,8,0.4) 60%, #050508 85%)",
+            "radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(5,5,8,0.25) 65%, rgba(5,5,8,0.7) 90%)",
         }}
       />
     </div>
