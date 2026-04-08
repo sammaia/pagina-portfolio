@@ -23,9 +23,9 @@ const PROJECTS = [
     description:
       "SaaS platform connecting pet owners with dog daycares. Tutors book and track services via mobile app, while daycares manage operations, daily reports, and payments through a web dashboard.",
     stack: ["Next.js", "Flutter", "Supabase", "Prisma", "Asaas", "Firebase"],
-    link: null,
-    github: null,
-    status: "dev" as const,
+    link: "https://daily-pet-ebon.vercel.app/login",
+    github: "https://github.com/sammaia/daily-pet",
+    status: "live" as const,
     accent: "violet" as const,
     mockup: {
       type: "mobile" as const,
